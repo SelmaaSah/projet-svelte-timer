@@ -1,18 +1,145 @@
-body{
-  font-family: Arial;
-  margin:0;
-  padding:20px;
+/* src/styles/global.css */
+
+/* Font Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #8b5e3c; /* brun café */
+  --secondary-color: #f5f0e6; /* beige clair */
+  --accent-color: #d94f4f; /* rouge chaud */
+  --green-color: #6aa84f; /* vert thé */
+  --button-bg: #f3d1b0;
+  --button-hover: #e1b57b;
 }
 
-.card{
-  border:1px solid #ddd;
-  border-radius:10px;
-  padding:15px;
-  margin:10px;
-  transition:0.2s;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary-color);
+  color: #333;
 }
 
-.card:hover{
-  transform:scale(1.03);
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.tabs button {
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--button-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tabs button:hover {
+  background-color: var(--button-hover);
+}
+
+.tabs button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 1rem auto;
+  max-width: 300px;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+}
+
+.card p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.card button {
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.card button:hover {
+  background-color: #c84747;
+}
+
+.timer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.timer h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bar {
+  width: 80%;
+  height: 12px;
+  background: #eee;
+  border-radius: 6px;
+  margin: 0.5rem auto;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 6px;
+  background: var(--green-color);
+  transition: width 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card {
+    max-width: 90%;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

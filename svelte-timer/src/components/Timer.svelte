@@ -30,7 +30,7 @@
   reset();
   start();
 }
-$: color = remaining < 10 ? "red" : "green";
+$: color = remaining < 10 ? "var(--accent-color)" : "var(--green-color)";
 </script>
 
 <div class="timer">

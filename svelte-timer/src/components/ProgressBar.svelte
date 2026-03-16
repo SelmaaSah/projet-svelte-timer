@@ -1,13 +1,10 @@
 <script>
   export let progress = 0;
-  export let color = "green";
+  export let color = "var(--green-color)";
 </script>
 
 <div class="bar">
-  <div
-    class="fill"
-    style="width: {progress}%; background: {color};"
-  ></div>
+ <div class="fill" style="width:{progress}%; background:{color}"></div>
 </div>
 
 <style>
