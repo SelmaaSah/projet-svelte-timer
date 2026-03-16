@@ -1,19 +1,33 @@
 <script>
-	let title = "Egg’n Tea Timer";
+  import Header from "./components/Header.svelte";
+  import Tabs from "./components/Tabs.svelte";
+  import Timer from "./components/Timer.svelte";
+
+  import TeaSection from "./features/tea/TeaSection.svelte";
+  import EggSection from "./features/egg/EggSection.svelte";
+
+  let tab = "tea";
+  let timerDuration = 0;
+
+  function changeTab(t){
+    tab = t;
+  }
+
+  function startTimer(time){
+  timerDuration = time;
+}
 </script>
 
-<main>
-	<h1>{title}</h1>
-	<p>Application Svelte pour gérer les timers de thé et d'œufs.</p>
-</main>
+<Header/>
 
-<style>
-	main {
-		text-align: center;
-		margin-top: 50px;
-	}
+<Tabs active={tab} onChange={changeTab}/>
 
-	h1 {
-		font-size: 3rem;
-	}
-</style>
+{#if tab === "tea"}
+  <TeaSection onSelect={startTimer}/>
+{:else}
+  <EggSection onSelect={startTimer}/>
+{/if}
+
+{#if timerDuration}
+  <Timer duration={timerDuration}/>
+{/if}
