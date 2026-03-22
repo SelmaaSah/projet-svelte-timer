@@ -63,6 +63,7 @@ h2 {
 
 h1 {
   font-size: 56px;
+  color: white;
   letter-spacing: -1.68px;
   margin: 32px 0;
   @media (max-width: 1024px) {
@@ -294,3 +295,55 @@ code {
     border-right-color: var(--border);
   }
 }
+
+
+/* --- Styles pour les cartes de recettes (Oeufs & Thés) --- */
+
+.recipe-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  text-align: left; /* Pour que le texte de la recette soit aligné à gauche */
+  width: 100%;
+  max-width: 400px; /* Pour éviter que les cartes soient trop larges */
+  box-sizing: border-box;
+}
+
+.recipe-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+
+.recipe-steps {
+  margin: 16px 0;
+  font-size: 15px;
+}
+
+.recipe-steps ol {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.recipe-steps li {
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.recipe-desc {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text);
+  margin: 12px 0;
+}
+
+/* On ajuste l'espacement autour des sections */
+h2 {
+    margin-top: 24px;
+}
+

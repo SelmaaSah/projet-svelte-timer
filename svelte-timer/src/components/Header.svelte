@@ -1,5 +1,5 @@
 <header>
-  <h1>🍵 Egg & Tea Timer</h1>
+  <h1> Egg & Tea Timer</h1>
 </header>
 
 <style>

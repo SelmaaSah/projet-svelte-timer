@@ -3,12 +3,17 @@
   export let onSelect;
 </script>
 
-<div class="card">
-  <h3>{tea.name}</h3>
-  <p>{tea.temperature}°C</p>
-  <p>{tea.time}s</p>
+<div class="recipe-card">
+  <h2>{tea.name}</h2>
+  
+  {#if tea.image}
+    <img src={tea.image} alt={tea.name} class="recipe-image" />
+  {/if}
 
-  <button on:click={() => onSelect(tea.time)}>
-    Start timer
+  <p>🌡️ <code>{tea.temperature}°C</code> | ⏱️ <code>{tea.time}s</code></p>
+  <p class="recipe-desc">{tea.description}</p>
+
+  <button class="counter" on:click={() => onSelect(tea.time / 20)}>
+    Démarrer le timer
   </button>
 </div>

@@ -5,12 +5,14 @@
 
   import TeaSection from "./features/tea/TeaSection.svelte";
   import EggSection from "./features/egg/EggSection.svelte";
+  import './app.css';
 
   let tab = "tea";
   let timerDuration = 0;
 
   function changeTab(t){
     tab = t;
+    timerDuration = 0; // efface le timer de l'écran quand on change de catégorie ou d'onglet
   }
 
   function startTimer(time){
