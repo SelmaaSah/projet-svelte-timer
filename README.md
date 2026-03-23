@@ -27,8 +27,6 @@ L’application permet de :
 
 ⚠️ **Note pour la démonstration :** Conformément aux consignes, les durées réelles d'infusion et de cuisson ont été divisées par 20 pour les besoins de la démo.
 
-🔊 **X Notification sonore :** Le code inclut la logique pour jouer un effet sonore lorsqu'il reste 10 secondes. Cette partie a été laissée en commentaire dans le rendu final afin de documenter la démarche, car les navigateurs ont bloquer la lecture audio asynchrone (sans interaction directe de l'utilisateur à l'instant T).
-
 Le projet met en pratique plusieurs concepts importants :
 
 * architecture modulaire
