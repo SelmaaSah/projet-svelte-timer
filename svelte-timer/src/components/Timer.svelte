@@ -8,18 +8,19 @@
   let remaining = duration;
   let interval;
   
-  // État pour contrôler l'affichage de la notification
+  
   let showNotif = false; 
 
   function start(){
     clearInterval(interval);
-    showNotif = false; // On cache la notif au (re)démarrage
+    showNotif = false; 
 
     interval = setInterval(()=>{
       if(remaining > 0){
         remaining--;
       } else {
         clearInterval(interval);
+        playSound();
       }
     }, 1000);
   }
@@ -43,14 +44,10 @@
   
   $: color = remaining <= 10 ? "red" : "var(--accent)";
 
-  // tentative d'ajouter un son audio lorsqu'il ne reste que 10 sec mais non supporté par le navigateur 
-  //$: if (remaining === 10) {
-    //const audio = new Audio('src/assets/bip.mp3');
-
-    //audio.play().catch(e => console.warn("Son bloqué par le navigateur", e));
-
-    //showNotif = true;
-  //}
+  function playSound(){
+  const audio = new Audio("/bell.mp3");
+  audio.play();
+}
 
 </script>
 
@@ -71,15 +68,14 @@
 
 <style>
   .notif-zone {
-    height: 30px; /* Réserve l'espace pour éviter que les boutons sautent quand le texte apparaît */
-    margin: 10px 0;
+    height: 30px; 
   }
 
   .notif-text {
     color: red;
     font-weight: bold;
     margin: 0;
-    /* Petite animation CSS pour attirer l'oeil */
+    
     animation: pulse 1s infinite alternate;
   }
 

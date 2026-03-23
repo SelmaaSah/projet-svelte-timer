@@ -131,6 +131,18 @@ button {
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
 }
+.recipe-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+
+  width: 100%;
+  max-width: 70%; 
+  margin: 2rem auto; 
+
+  text-align: center;
+}
 
 /* Responsive */
 @media (max-width: 480px) {

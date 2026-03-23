@@ -16,7 +16,7 @@ export const teas = [
   {
     name: "Thé blanc",
     temperature: 85,
-    time: 420, // 7 minutes
+    time: 420, 
     image: "src/assets/blanc.png",
     description: "Prend du temps à infuser : de 7 à 20 minutes, à 85 °C."
   },
@@ -30,7 +30,7 @@ export const teas = [
   {
     name: "Oolong",
     temperature: 85,
-    time: 360, // 6 minutes (moyenne entre 5 et 7)
+    time: 360, 
     image: "src/assets/oolong.jpg",
     description: "La durée d’infusion est entre 5 et 7 minutes, à 85 °C."
   }

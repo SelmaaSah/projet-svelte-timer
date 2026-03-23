@@ -23,6 +23,7 @@ L’application permet de :
 * sélectionner une **recette d'œuf**
 * lancer un **timer automatique**
 * suivre la progression avec une **barre de progression**
+🔊 **Notification sonore :** Une alerte sonore a été intégrée afin de signaler la fin du timer. Cette fonctionnalité améliore l’expérience utilisateur en permettant d’être averti sans avoir à surveiller l’écran en continu. Des contraintes liées aux navigateurs (autoplay audio) ont été prises en compte lors de son implémentation.
 
 ⚠️ **Note pour la démonstration :** Conformément aux consignes, les durées réelles d'infusion et de cuisson ont été divisées par 20 pour les besoins de la démo.
 
