@@ -30,6 +30,6 @@
   <EggSection onSelect={startTimer}/>
 {/if}
 
-{#if timerDuration}
+{#if timerDuration > 0}
   <Timer duration={timerDuration}/>
 {/if}

@@ -5,21 +5,29 @@
 
   export let duration = 0;
 
-  let remaining = duration;
+  let remaining = 0;
   let interval;
-  
-  
-  let showNotif = false; 
+  let showNotif = false;
+  let isRunning = false; // pour savoir si le timer est en cours
+
+  // Si duration change, on réinitialise
+  $: if (!isRunning && duration) {
+    remaining = duration;
+    showNotif = false;
+  }
 
   function start(){
-    clearInterval(interval);
-    showNotif = false; 
-
+    if (isRunning) return; // évite de lancer plusieurs intervalles
+    isRunning = true;
+    showNotif = false;
+    
     interval = setInterval(()=>{
       if(remaining > 0){
         remaining--;
+        if(remaining <= 10) showNotif = true;
       } else {
         clearInterval(interval);
+        isRunning = false;
         playSound();
       }
     }, 1000);
@@ -29,6 +37,7 @@
     clearInterval(interval);
     remaining = duration;
     showNotif = false;
+    isRunning = false;
   }
 
   onDestroy(() => {
@@ -36,19 +45,12 @@
   });
 
   $: progress = duration ? ((duration - remaining) / duration) * 100 : 0;
-  
-  $: if(duration){
-    reset();
-    start();
-  }
-  
   $: color = remaining <= 10 ? "red" : "var(--accent)";
 
   function playSound(){
-  const audio = new Audio("/bell.mp3");
-  audio.play();
-}
-
+    const audio = new Audio("/bell.mp3");
+    audio.play();
+  }
 </script>
 
 <div class="timer">
@@ -75,7 +77,6 @@
     color: red;
     font-weight: bold;
     margin: 0;
-    
     animation: pulse 1s infinite alternate;
   }
 
