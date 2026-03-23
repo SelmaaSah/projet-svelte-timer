@@ -52,7 +52,7 @@ Ces technologies permettent de construire une application **rapide, légère et 
 Clone le projet :
 
 ```bash
-git clone https://github.com/ton-username/projet-svelte-timer.git
+git clone https://github.com/SelmaaSah/projet-svelte-timer
 ```
 
 Entrer dans le dossier :
