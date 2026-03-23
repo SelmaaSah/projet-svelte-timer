@@ -8,16 +8,15 @@
   let remaining = 0;
   let interval;
   let showNotif = false;
-  let isRunning = false; // pour savoir si le timer est en cours
+  let isRunning = false; 
 
-  // Si duration change, on réinitialise
   $: if (!isRunning && duration) {
     remaining = duration;
     showNotif = false;
   }
 
   function start(){
-    if (isRunning) return; // évite de lancer plusieurs intervalles
+    if (isRunning) return; 
     isRunning = true;
     showNotif = false;
     
